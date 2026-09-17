@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>B站动态提醒 · 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+<div class="page">
+  <h1>B站动态提醒</h1>
+
+  <div id="warning" class="banner warn hidden"></div>
+
+  <section class="card">
+    <h2>账号状态</h2>
+    <div id="login-status" class="login-status">读取中…</div>
+    <button id="refresh-login" type="button" class="btn refresh">重新检测登录状态</button>
+    <p class="hint">插件直接复用浏览器中已有的 B 站登录态，不会收集你的账号密码。</p>
+  </section>
+
+  <section class="card">
+    <h2>订阅的 UP 主</h2>
+    <form id="add-form" class="add-form" autocomplete="off">
+      <input id="uid-input" type="text" placeholder="输入 UID 或 https://space.bilibili.com/xxx">
+      <button id="add-btn" type="submit" class="btn primary">添加</button>
+    </form>
+    <div id="add-msg" class="msg hidden"></div>
+    <ul id="sub-list" class="sub-list"></ul>
+    <p id="sub-empty" class="hint hidden">还没有订阅任何 UP 主。</p>
+  </section>
+
+  <section class="card">
+    <h2>检查设置</h2>
+    <label class="field">
+      <span class="field-label">检查频率</span>
+      <select id="interval">
+        <option value="1">每 1 分钟</option>
+        <option value="3">每 3 分钟</option>
+        <option value="5">每 5 分钟</option>
+        <option value="10">每 10 分钟</option>
+        <option value="30">每 30 分钟</option>
+      </select>
+    </label>
+    <label class="field checkbox">
+      <input id="notify" type="checkbox">
+      <span>发现新动态时弹出桌面通知</span>
+    </label>
+    <p class="hint">频率越高越及时，但被 B 站风控的概率也越大，建议保持 5 分钟。</p>
+    <div id="save-msg" class="msg hidden"></div>
+  </section>
+</div>
+<script type="module" src="options.js"></script>
+</body>
+</html>

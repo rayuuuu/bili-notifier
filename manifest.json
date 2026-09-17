@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "B站动态提醒",
+  "version": "1.0.0",
+  "description": "订阅指定 B 站 UP 主，后台定时检查其空间动态，有新动态时弹出桌面通知并显示未读徽章。",
+  "homepage_url": "https://github.com/rayuuuu/bili-notifier",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "cookies",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "*://*.bilibili.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "B站动态提醒",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
